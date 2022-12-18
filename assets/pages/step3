@@ -1,0 +1,37 @@
+<article>
+  <div>
+    <h1>Pick add-ons</h1>
+    <p>Add-ons help enhance your gaming experience.</p>
+  </div>
+
+  <div>
+    <button>
+      <div>
+      </div>
+      <div>
+        <h3>Online service</h3>
+        <p>Access to multiplayer games</p>
+      </div>
+      <span>+$1/mo</span>
+    </button>
+    <button>
+      <div>
+        <h3>Larger storage</h3>
+        <p>Extra 1TB of cloud save</p>
+      </div>
+      <span>+$2/mo</span>
+    </button>
+    <button>
+      <div>
+        <h3>Customizable Profile</h3>
+        <p>Custom theme on your profile</p>
+      </div>
+      <span>+$2/mo</span>
+    </button>
+    <div>
+
+      <div>
+        <button onclick="moveToPreviousStepPage()">Go Back</button>
+        <button onclick="moveToNextStepPage()">Next Step</button>
+      </div>
+</article>

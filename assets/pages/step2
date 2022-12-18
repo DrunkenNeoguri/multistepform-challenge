@@ -1,0 +1,39 @@
+<article>
+  <h1>Select your plan</h1>
+  <p>You have the option of monthly or yearly billing.</p>
+
+  <div>
+    <button>
+      <img src="../images/icon-arcade.svg" alt="Arcade Plan, $9 per month">
+      Arcade
+      $9/mo
+    </button>
+    <button>
+      <img src="../images/icon-advanced.svg" alt="Arcade Plan, $9 per month">
+      Advanced
+      $12/mo
+    </button>
+    <button>
+      <img src="../images/icon-pro.svg" alt="Arcade Plan, $9 per month">
+      Pro
+      $15/mo
+    </button>
+  </div>
+
+  <div>
+    <span>
+      Monthly
+    </span>
+    <button>
+      <span></span>
+    </button>
+    <span>
+      Yearly
+    </span>
+  </div>
+
+  <div>
+    <button onclick="moveToPreviousStepPage()">Go Back</button>
+    <button onclick="moveToNextStepPage()">Next Step</button>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+<article>
+  <h1>Finishing up</h1>
+  <p>Double-check everything looks OK before confirming.</p>
+
+  <!-- Dynamically add subscription and add-on selections here -->
+
+  <div>
+
+    <div>
+      <span>Total (per month/year)</span>
+    </div>
+
+  </div>
+
+  <div>
+    <button onclick="moveToPreviousStepPage()">Go Back</button>
+    <button onclick="moveToNextStepPage()">Confirm</button>
+  </div>
+
+</article>
