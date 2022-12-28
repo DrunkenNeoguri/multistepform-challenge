@@ -1,20 +1,37 @@
-<article>
-  <h1>Personal info</h1>
-  <p>Please provide your name, email address, and phone number.
+<article class="flex flex-col justify-center h-full">
+  <h1 class="font-bold text-3xl text-marine-blue">Personal info</h1>
+  <p class="text-cool-gray py-2 xsm:py-4">Please provide your name, email address, and phone number.
   </p>
 
   <form>
-    <label>Name</label>
-    <input placeholder="e.g. Stephen King">
+    <div class="flex-col py-2 xsm:py-4">
+      <label class="block text-marine-blue text-sm xsm:text-base xsm:font-medium">Name</label>
+      <input class="border-light-gray border-2 rounded w-full px-4 py-2 placeholder:text-sm placeholder:font-medium"
+        placeholder="e.g. Stephen King">
+    </div>
 
-    <label>Email Address</label>
-    <input placeholder="e.g. stephenking@lorem.com">
+    <div class="flex-col py-2 xsm:py-4">
+      <label class="block text-marine-blue text-sm xsm:text-base xsm:font-medium">Email Address</label>
+      <input class="border-light-gray border-2 rounded w-full px-4 py-2 placeholder:text-sm placeholder:font-medium"
+        placeholder="e.g. stephenking@lorem.com">
+    </div>
 
-    <label>Phone Number</label>
-    <input placeholder="e.g. +1 234 567 890">
+    <div class="flex-col py-2 xsm:py-4">
+      <label class="block text-marine-blue text-sm xsm:text-base xsm:font-medium">Phone Number</label>
+      <input class="border-light-gray border-2 rounded w-full px-4 py-2 placeholder:text-sm placeholder:font-medium"
+        placeholder="e.g. +1 234 567 890">
+    </div>
   </form>
-  <button onclick="moveToNextStepPage()">
+
+  <button class="hidden xsm:block bg-marine-blue text-white px-4 py-2 m-auto mr-0 rounded mb-0"
+    onclick="moveToNextStepPage()">
     Next Step
   </button>
 
 </article>
+
+<div class="fixed flex justify-center left-0 bottom-0 bg-white w-full h-16 xsm:hidden">
+  <button class="block bg-marine-blue text-white px-4 py-2 m-auto mr-4 rounded" onclick="moveToNextStepPage()">
+    Next Step
+  </button>
+</div>

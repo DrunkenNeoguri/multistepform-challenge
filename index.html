@@ -2,79 +2,123 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
   <title>Frontend Mentor | Multi-step form</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      important: "body",
+      theme: {
+        screens: {
+          'xsm': '480px',
+          'zero': '0px'
+        },
+        extend: {
+          spacing: {
+            '34': '8.5rem',
+            '88': '22rem',
+            '110': '27.5rem',
+            '120': '30rem',
+            '144': '36rem',
+            '168': '42rem',
+            '192': '48rem',
+            '216': '54rem',
+            '240': '60rem',
+          },
+          colors: {
+            "marine-blue": "hsl(213, 96%, 18%)",
+            "purplish-blue": "hsl(243, 100%, 62%)",
+            "pastel-blue": "hsl(228, 100%, 84%)",
+            "light-blue": "hsl(206, 94%, 87%)",
+            "strawberry-red": "hsl(354, 84%, 57%)",
+            "cool-gray": "hsl(231, 11%, 63%)",
+            "light-gray": "hsl(229, 24%, 87%)",
+            "magnolia": "hsl(217, 100%, 97%)",
+            "alabaster": "hsl(231, 100%, 99%)",
+            "white": "hsl(0, 0%, 100%)",
+            "attribution": "hsl(228, 45%, 44%)",
+          }
+        },
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <main id="root">
-    <nav class="nav__desktop">
-      <div>
-        <span>
+  <main id="root" class="flex flex-col xsm:flex-row  items-center xsm:bg-white m-auto max-w-4xl rounded-lg">
+    <nav
+      class="bg-[url('/assets/images/bg-sidebar-desktop.svg')] bg-no-repeat bg-cover rounded-lg hidden xsm:flex xsm:flex-col h-144 w-68 m-4 p-4">
+
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div
+          class="flex justify-center align-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">
           1
-        </span>
-        <div>
-          <span>Step 1</span>
-          <span>Your info</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">Step 1</span>
+          <span class="uppercase text-magnolia font-bold">Your info</span>
         </div>
       </div>
-      <div>
-        <span>
-          2
-        </span>
-        <div>
-          <span>Step 2</span>
-          <span>Select plan</span>
+
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8"> 2
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">STEP 2</span>
+          <span class="uppercase text-magnolia font-bold">Select plan</span>
         </div>
       </div>
-      <div>
-        <span>
-          3
-        </span>
-        <div>
-          <span>Step 3</span>
-          <span>Add-ons</span>
+
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8"> 3
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">STEP 3</span>
+          <span class="uppercase text-magnolia font-bold">Add-ons</span>
         </div>
       </div>
-      <div>
-        <span>
-          4
-        </span>
-        <div>
-          <span>Step 4</span>
-          <span>Summary</span>
+
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8"> 4
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">STEP 4</span>
+          <span class="uppercase text-magnolia font-bold">Summary</span>
         </div>
       </div>
     </nav>
 
-    <nav class="nav__mobile">
-      1
-      2
-      3
-      4
+    <nav
+      class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-cover flex flex-row justify-center gap-4 xsm:hidden w-full h-44 py-8 relative">
+      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">1
+      </div>
+      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">2
+      </div>
+      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">3
+      </div>
+      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">4
+      </div>
     </nav>
-    <section id="context">
-
-
+    <section id="context"
+      class="bg-white rounded-lg m-4 py-8 px-6 absolute z-10 top-20 xsm:rounded-l-none xsm:rounded-r-xl xsm:static xsm:h-144 xsm:m-auto xsm:pb-0">
     </section>
-
   </main>
 
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://www.frontendmentor.io/profile/DrunkenNeoguri">develop_neoguri</a>.
+  <footer class="text-xs text-center">
+    Challenge by
+    <a class="text-attribution" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+      Mentor</a>.
+    Coded by
+    <a class="text-attribution" href="https://www.frontendmentor.io/profile/DrunkenNeoguri">develop_neoguri</a>.
   </footer>
 
   <script src="./assets/modules/main.js"></script>
-
 </body>
 
 </html>

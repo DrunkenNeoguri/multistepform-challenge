@@ -1,37 +1,56 @@
-<article>
+<article class="flex flex-col justify-center h-full w-full">
+  <h1 class="font-bold text-3xl text-marine-blue">Pick add-ons</h1>
+  <p class="text-cool-gray py-2 xsm:py-4">Add-ons help enhance your gaming experience.</p>
+
   <div>
-    <h1>Pick add-ons</h1>
-    <p>Add-ons help enhance your gaming experience.</p>
+    <button class="flex flex-row items-center border-light-gray border-2 rounded-md m-0 my-2 p-4 w-full xsm:w-110 xsm:my-4">
+      <div>
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-6 h-6 border-light-gray border-2 mr-4 rounded">
+      </div>
+      <div class="flex flex-col items-start">
+        <label class="block text-marine-blue text-sm font-medium xsm:text-base">Online service</label>
+        <span class="block text-cool-gray text-xs xsm:text-sm">Access to multiplayer games</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium">+$1/mo</span>
+    </button>
+    
+    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4">
+      <div>
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-6 h-6 border-light-gray border-2 mr-4 rounded">
+      </div>
+      <div class="flex flex-col items-start">
+        <label class="block text-marine-blue text-sm font-medium xsm:text-base">Larger storage</label>
+        <span class="block text-cool-gray text-xs xsm:text-sm">Extra 1TB of cloud save</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium">+$2/mo</span>
+    </button>
+
+    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4">
+      <div>
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-6 h-6 border-light-gray border-2 mr-4 rounded">
+      </div>
+      <div class="flex flex-col items-start">
+        <label class="block text-marine-blue text-sm font-medium xsm:text-base">Customizable Profile</label>
+        <span class="block text-cool-gray text-xs xsm:text-sm">Custom theme on your profile</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium">+$2/mo</span>
+    </button>
+
   </div>
 
-  <div>
-    <button>
-      <div>
-      </div>
-      <div>
-        <h3>Online service</h3>
-        <p>Access to multiplayer games</p>
-      </div>
-      <span>+$1/mo</span>
+  <div class="xsm:flex flex-row hidden mb-0 mt-auto">
+    <button class="block text-cool-gray" onclick="moveToPreviousStepPage()">Go Back</button>
+    <button class="hidden xsm:block bg-marine-blue text-white px-4 py-2 m-auto mr-0 rounded mb-0"
+      onclick="moveToNextStepPage()">
+      Next Step
     </button>
-    <button>
-      <div>
-        <h3>Larger storage</h3>
-        <p>Extra 1TB of cloud save</p>
-      </div>
-      <span>+$2/mo</span>
-    </button>
-    <button>
-      <div>
-        <h3>Customizable Profile</h3>
-        <p>Custom theme on your profile</p>
-      </div>
-      <span>+$2/mo</span>
-    </button>
-    <div>
+  </div>
 
-      <div>
-        <button onclick="moveToPreviousStepPage()">Go Back</button>
-        <button onclick="moveToNextStepPage()">Next Step</button>
-      </div>
 </article>
+
+<div class="fixed flex justify-center left-0 bottom-0 bg-white w-full h-16 xsm:hidden">
+  <button class="block text-cool-gray px-4 py-2 m-auto ml-0 rounded" onclick="moveToPreviousStepPage()">Go Back</button>
+  <button class="block bg-marine-blue text-white px-4 py-2 m-auto mr-4 rounded" onclick="moveToNextStepPage()">
+    Next Step
+  </button>
+</div>

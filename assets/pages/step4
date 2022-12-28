@@ -1,20 +1,29 @@
-<article>
-  <h1>Finishing up</h1>
-  <p>Double-check everything looks OK before confirming.</p>
-
+<article class="flex flex-col justify-center h-full">
+  <h1 class="font-bold text-3xl text-marine-blue">Finishing up</h1>
+  <p class="text-cool-gray py-2 xsm:py-4">Double-check everything looks OK before confirming.</p>
   <!-- Dynamically add subscription and add-on selections here -->
 
   <div>
 
-    <div>
+    <div class="xsm:w-110">
       <span>Total (per month/year)</span>
     </div>
 
   </div>
 
-  <div>
-    <button onclick="moveToPreviousStepPage()">Go Back</button>
-    <button onclick="moveToNextStepPage()">Confirm</button>
+  <div class="xsm:flex flex-row hidden mb-0 mt-auto">
+    <button class="block text-cool-gray" onclick="moveToPreviousStepPage()">Go Back</button>
+    <button class="hidden xsm:block bg-marine-blue text-white px-4 py-2 m-auto mr-0 rounded mb-0"
+      onclick="moveToNextStepPage()">
+      Confirm
+    </button>
   </div>
-
 </article>
+
+<div class="fixed flex justify-center left-0 bottom-0 bg-white w-full h-16 xsm:hidden">
+  <button class="block text-cool-gray px-4 py-2 m-auto ml-0 rounded" onclick="moveToPreviousStepPage()">Go
+    Back</button>
+  <button class="block bg-marine-blue text-white px-4 py-2 m-auto mr-4 rounded" onclick="moveToNextStepPage()">
+    Confirm
+  </button>
+</div>
