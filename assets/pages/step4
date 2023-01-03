@@ -6,18 +6,19 @@
   <div>
 
     <div class="xsm:w-110">
-      <span>Total (per month/year)</span>
+      <div>
+        <span>Total (per month/year)</span>
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="xsm:flex flex-row hidden mb-0 mt-auto">
-    <button class="block text-cool-gray" onclick="moveToPreviousStepPage()">Go Back</button>
-    <button class="hidden xsm:block bg-marine-blue text-white px-4 py-2 m-auto mr-0 rounded mb-0"
-      onclick="moveToNextStepPage()">
-      Confirm
-    </button>
-  </div>
+    <div class="xsm:flex flex-row hidden mb-0 mt-auto">
+      <button class="block text-cool-gray" onclick="moveToPreviousStepPage()">Go Back</button>
+      <button class="hidden xsm:block bg-marine-blue text-white px-4 py-2 m-auto mr-0 rounded mb-0"
+        onclick="moveToNextStepPage()">
+        Confirm
+      </button>
+    </div>
 </article>
 
 <div class="fixed flex justify-center left-0 bottom-0 bg-white w-full h-16 xsm:hidden">

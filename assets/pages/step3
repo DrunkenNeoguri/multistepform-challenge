@@ -3,37 +3,46 @@
   <p class="text-cool-gray py-2 xsm:py-4">Add-ons help enhance your gaming experience.</p>
 
   <div>
-    <button class="flex flex-row items-center border-light-gray border-2 rounded-md m-0 my-2 p-4 w-full xsm:w-110 xsm:my-4">
-      <div>
-        <img src="assets/images/icon-checkmark.svg" alt="" class="w-6 h-6 border-light-gray border-2 mr-4 rounded">
+    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4"
+      onclick="selectAddOnOption(event)">
+      <div id="onlineService"
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-4 rounded pointer-events-none">
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
       </div>
-      <div class="flex flex-col items-start">
-        <label class="block text-marine-blue text-sm font-medium xsm:text-base">Online service</label>
-        <span class="block text-cool-gray text-xs xsm:text-sm">Access to multiplayer games</span>
+      <div class="flex flex-col items-start pointer-events-none">
+        <label class="block text-marine-blue text-sm font-medium pointer-events-none xsm:text-base ">Online
+          service</label>
+        <span class="block text-cool-gray text-xs pointer-events-none xsm:text-sm">Access to multiplayer games</span>
       </div>
-      <span class="ml-auto text-sm text-purplish-blue font-medium">+$1/mo</span>
-    </button>
-    
-    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4">
-      <div>
-        <img src="assets/images/icon-checkmark.svg" alt="" class="w-6 h-6 border-light-gray border-2 mr-4 rounded">
-      </div>
-      <div class="flex flex-col items-start">
-        <label class="block text-marine-blue text-sm font-medium xsm:text-base">Larger storage</label>
-        <span class="block text-cool-gray text-xs xsm:text-sm">Extra 1TB of cloud save</span>
-      </div>
-      <span class="ml-auto text-sm text-purplish-blue font-medium">+$2/mo</span>
+      <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$1/mo</span>
     </button>
 
-    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4">
-      <div>
-        <img src="assets/images/icon-checkmark.svg" alt="" class="w-6 h-6 border-light-gray border-2 mr-4 rounded">
+    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4"
+      onclick="selectAddOnOption(event)">
+      <div id="largerStorage"
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-4 rounded pointer-events-none">
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
       </div>
-      <div class="flex flex-col items-start">
-        <label class="block text-marine-blue text-sm font-medium xsm:text-base">Customizable Profile</label>
-        <span class="block text-cool-gray text-xs xsm:text-sm">Custom theme on your profile</span>
+      <div class="flex flex-col items-start pointer-events-none">
+        <label class="block text-marine-blue text-sm font-medium pointer-events-none xsm:text-base ">Larger
+          storage</label>
+        <span class="block text-cool-gray text-xs pointer-events-none xsm:text-sm">Extra 1TB of cloud save</span>
       </div>
-      <span class="ml-auto text-sm text-purplish-blue font-medium">+$2/mo</span>
+      <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$2/mo</span>
+    </button>
+
+    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4"
+      onclick="selectAddOnOption(event)">
+      <div id="customizableProfile"
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-4 rounded pointer-events-none">
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
+      </div>
+      <div class="flex flex-col items-start pointer-events-none">
+        <label class="block text-marine-blue text-sm font-medium pointer-events-none xsm:text-base ">Customizable
+          Profile</label>
+        <span class="block text-cool-gray text-xs pointer-events-none xsm:text-sm">Custom theme on your profile</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$2/mo</span>
     </button>
 
   </div>
