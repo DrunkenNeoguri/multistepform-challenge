@@ -30,6 +30,7 @@
             '192': '48rem',
             '216': '54rem',
             '240': '60rem',
+            '6/4': '150%',
           },
           colors: {
             "marine-blue": "hsl(213, 96%, 18%)",
@@ -43,6 +44,20 @@
             "alabaster": "hsl(231, 100%, 99%)",
             "white": "hsl(0, 0%, 100%)",
             "attribution": "hsl(228, 45%, 44%)",
+          },
+          keyframes: {
+            rightSlide: {
+              '0%': { transform: "translateY(25%)" },
+              '100%': { transform: "translateX(150%) translateY(25%)" }
+            },
+            leftSlide: {
+              '0%': { transform: "translateX(150%) translateY(25%)" },
+              '100%': { transform: "translateY(25%)" }
+            }
+          },
+          animation: {
+            rightSlide: 'rightSlide 1s 1 forwards',
+            leftSlide: 'leftSlide 1s 1 forwards'
           }
         },
       }

@@ -9,7 +9,9 @@
       <img src="assets/images/icon-arcade.svg" alt="Arcade Plan, $9 per month" class="p-4 pointer-events-none">
       <div class="flex flex-col items-start xsm:p-4 pointer-events-none">
         <label class="text-marine-blue font-medium pointer-events-none">Arcade</label>
-        <span class="text-cool-gray text-sm font-medium pointer-events-none">$9/mo</span>
+        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none">$9/mo</span>
+        <span class="yearly hidden text-cool-gray text-sm font-medium pointer-events-none">$90/yr</span>
+        <span class="yearly hidden text-marine-blue text-sm font-normal pointer-events-none">2 months free</span>
       </div>
     </button>
 
@@ -19,7 +21,9 @@
       <img src="assets/images/icon-advanced.svg" alt="Arcade Plan, $9 per month" class="p-4 pointer-events-none">
       <div class="flex flex-col items-start xsm:p-4 pointer-events-none">
         <label class="text-marine-blue font-medium pointer-events-none">Advanced</label>
-        <span class="text-cool-gray text-sm font-medium pointer-events-none">$12/mo</span>
+        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none">$12/mo</span>
+        <span class="yearly hidden text-cool-gray text-sm font-medium pointer-events-none">$120/yr</span>
+        <span class="yearly hidden text-marine-blue text-sm font-normal pointer-events-none">2 months free</span>
       </div>
     </button>
 
@@ -29,19 +33,21 @@
       <img src="assets/images/icon-pro.svg" alt="Arcade Plan, $9 per month" class="p-4 pointer-events-none">
       <div class="flex flex-col items-start xsm:p-4 pointer-events-none">
         <label class="text-marine-blue font-medium pointer-events-none">Pro</label>
-        <span class="text-cool-gray text-sm font-medium pointer-events-none">$15/mo</span>
+        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none">$15/mo</span>
+        <span class="yearly hidden text-cool-gray text-sm font-medium pointer-events-none">$150/yr</span>
+        <span class="yearly hidden text-marine-blue text-sm font-normal pointer-events-none">2 months free</span>
       </div>
     </button>
   </div>
 
   <div class="flex flex-row justify-center bg-magnolia gap-6 rounded-md py-4">
-    <span class="font-bold text-marine-blue">
+    <span class="flex justify-end font-bold text-marine-blue w-16">
       Monthly
     </span>
-    <button class="block bg-marine-blue rounded-xl px-1 w-12">
-      <span class="block bg-white rounded-full w-4 h-4"></span>
+    <button id="switchButton" class="flex bg-marine-blue rounded-xl px-1 w-12" onclick="changePlanPeriod(event)">
+      <span class="block bg-white rounded-full w-4 h-4 translate-y-1/4 pointer-events-none"></span>
     </button>
-    <span class="text-cool-gray">
+    <span class="text-cool-gray flex justify-start w-16">
       Yearly
     </span>
   </div>

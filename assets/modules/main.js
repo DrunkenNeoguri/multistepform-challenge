@@ -24,28 +24,55 @@ const renderEvent = {
     const nameNode = document.querySelector("#name");
     const emailNode = document.querySelector("#email");
     const phoneNode = document.querySelector("#phone");
-    console.log(nameNode, emailNode, phoneNode);
     nameNode.value = selectState.name;
     emailNode.value = selectState.emailAddress;
     phoneNode.value = selectState.phoneNumber;
   },
 
   step2: () => {
-    const palnGroup = document.getElementsByClassName("plan");
+    const planGroup = document.getElementsByClassName("plan");
     // Array.from 관련 내용 정리 ★
-    Array.from(palnGroup).forEach((element) => {
+    Array.from(planGroup).forEach((element) => {
       if (selectState.plan === element.id) {
         element.classList.add("border-purplish-blue", "bg-magnolia");
       } else {
         element.classList.remove("border-purplish-blue", "bg-magnolia");
       }
     });
+
+    const switchButton = document.querySelector("#switchButton");
+    const switchIcon = switchButton.querySelector("span");
+    const monthlyText = switchButton.previousElementSibling;
+    const yearlyText = switchButton.nextElementSibling;
+
+    if (selectState.period === "Yearly") {
+      Array.from(planGroup).forEach((element) => {
+        const monthlyClass = element.querySelector(".monthly");
+        const yearlyClass = element.getElementsByClassName("yearly");
+        monthlyClass.classList.add("hidden");
+        Array.from(yearlyClass).forEach((childElem) => {
+          childElem.classList.remove("hidden");
+        });
+      });
+
+      monthlyText.classList.add("text-cool-gray");
+      monthlyText.classList.remove("text-marine-blue", "font-bold");
+      yearlyText.classList.add("text-marine-blue", "font-bold");
+      switchIcon.classList.add("translate-y-1/4", "translate-x-6/4");
+    }
   },
 
   step3: () => {
     const checkboxGroup = document.getElementsByClassName("checkbox");
     // Array.from 관련 내용 정리 ★
+    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from
     Array.from(checkboxGroup).forEach((element) => {
+      if (selectState.period === "Yearly") {
+        const costSpan = element.parentNode.childNodes[5];
+        costSpan.innerText =
+          element.id === "onlineService" ? "+$10/yr" : "+$20/yr";
+      }
+
       if (selectState.addon.indexOf(element.id) !== -1) {
         element.parentNode.classList.add("border-purplish-blue", "bg-magnolia");
         element.classList.add("bg-purplish-blue", "border-purplish-blue");
@@ -101,7 +128,6 @@ function moveToPreviousStepPage() {
     .then((response) => response.text())
     .then((text) => {
       context.innerHTML = text;
-      console.log(selectState.nowStep);
       renderEvent[`step${selectState.nowStep}`]();
     });
 }
@@ -109,19 +135,17 @@ function moveToPreviousStepPage() {
 //step1 - input event when user inputed value in input element
 function inputValidationCheck(event) {
   // 형제 노드 확인 -> previousElementSibling, nextElementSibling
-  const prevNodes = event.target.previousElementSibling;
-  const errorBox = prevNodes.querySelector("span");
+  // https://hianna.tistory.com/712
+  const nameNode = document.querySelector("#name");
+  const emailNode = document.querySelector("#email");
+  const phoneNode = document.querySelector("#phone");
+
   if (event.target.id === "name") {
     if (event.target.value === "") {
-      errorBox.classList.remove("hidden");
-      errorBox.classList.add("block");
-      event.target.classList.add("border-strawberry-red");
-      errorBox.innerText = errormsg1;
+      exposeErrorMsg(nameNode, errormsg1);
       selectState.name = event.target.value;
     } else {
-      errorBox.classList.remove("block");
-      errorBox.innerText = "";
-      errorBox.classList.add("hidden");
+      disabledErrorMsg(nameNode);
       selectState.name = event.target.value;
       if (event.target.classList.contains("border-strawberry-red") === true) {
         event.target.classList.remove("border-strawberry-red");
@@ -130,41 +154,27 @@ function inputValidationCheck(event) {
   }
 
   if (event.target.id === "email") {
-    errorBox.classList.remove("hidden");
-    errorBox.classList.add("block");
     if (event.target.value === "") {
-      errorBox.innerText = errormsg1;
-      event.target.classList.add("border-strawberry-red");
+      exposeErrorMsg(emailNode, errormsg1);
       selectState.emailAddress = event.target.value;
     } else if (emailFormat.test(event.target.value) === true) {
-      errorBox.innerText = "";
-      event.target.classList.remove("border-strawberry-red");
-      errorBox.classList.remove("block");
-      errorBox.classList.add("hidden");
+      disabledErrorMsg(emailNode);
       selectState.emailAddress = event.target.value;
     } else {
-      event.target.classList.add("border-strawberry-red");
-      errorBox.innerText = errormsg2;
+      exposeErrorMsg(emailNode, errormsg2);
       selectState.emailAddress = event.target.value;
     }
   }
 
   if (event.target.id === "phone") {
-    errorBox.classList.remove("hidden");
-    errorBox.classList.add("block");
     if (event.target.value === "") {
-      errorBox.innerText = errormsg1;
-      event.target.classList.add("border-strawberry-red");
+      exposeErrorMsg(phoneNode, errormsg1);
       selectState.phoneNumber = event.target.value;
     } else if (phoneNumberFormat.test(event.target.value) === true) {
-      errorBox.innerText = "";
-      event.target.classList.remove("border-strawberry-red");
-      errorBox.classList.remove("block");
-      errorBox.classList.add("hidden");
+      disabledErrorMsg(phoneNode);
       selectState.phoneNumber = event.target.value;
     } else {
-      event.target.classList.add("border-strawberry-red");
-      errorBox.innerText = errormsg3;
+      exposeErrorMsg(phoneNode, errormsg3);
       selectState.phoneNumber = event.target.value;
     }
   }
@@ -177,31 +187,19 @@ function validationCheckToNextStep() {
   const phoneNode = document.querySelector("#phone");
 
   if (nameNode.value === "") {
-    const errorBox = nameNode.previousElementSibling.querySelector("span");
-    errorBox.classList.remove("hidden");
-    errorBox.classList.add("block");
-    nameNode.classList.add("border-strawberry-red");
-    errorBox.innerText = errormsg1;
+    exposeErrorMsg(phoneNode, errormsg1);
   }
 
   if (emailNode.value === "") {
-    const errorBox = emailNode.previousElementSibling.querySelector("span");
-    errorBox.innerText = errormsg1;
-    emailNode.classList.add("border-strawberry-red");
+    exposeBlankValueErrorMsg(emailNode);
   } else if (emailFormat.test(emailNode.value) === false) {
-    const errorBox = emailNode.previousElementSibling.querySelector("span");
-    emailNode.classList.add("border-strawberry-red");
-    errorBox.innerText = errormsg2;
+    exposeErrorMsg(phoneNode, errormsg2);
   }
 
   if (phoneNode.value === "") {
-    const errorBox = phoneNode.previousElementSibling.querySelector("span");
-    errorBox.innerText = errormsg1;
-    phoneNode.classList.add("border-strawberry-red");
+    exposeErrorMsg(phoneNode, errormsg1);
   } else if (phoneNumberFormat.test(phoneNode.value) === false) {
-    const errorBox = phoneNode.previousElementSibling.querySelector("span");
-    phoneNode.classList.add("border-strawberry-red");
-    errorBox.innerText = errormsg3;
+    exposeErrorMsg(phoneNode, errormsg3);
   }
 
   if (
@@ -214,6 +212,22 @@ function validationCheckToNextStep() {
   return true;
 }
 
+function exposeErrorMsg(node, msg) {
+  const errorBox = node.previousElementSibling.querySelector("span");
+  errorBox.classList.remove("hidden");
+  errorBox.classList.add("block");
+  node.classList.add("border-strawberry-red");
+  errorBox.innerText = msg;
+}
+
+function disabledErrorMsg(node) {
+  const errorBox = node.previousElementSibling.querySelector("span");
+  errorBox.innerText = "";
+  node.classList.remove("border-strawberry-red");
+  errorBox.classList.remove("block");
+  errorBox.classList.add("hidden");
+}
+
 // step2 - click event when user clicked planning option
 function selectPlanningOption(event) {
   const planGroup = document.getElementsByClassName("plan");
@@ -224,6 +238,50 @@ function selectPlanningOption(event) {
       selectState.plan = element.id;
     } else {
       element.classList.remove("border-purplish-blue", "bg-magnolia");
+    }
+  });
+}
+
+//step2 - click event whne user clicked play period option
+function changePlanPeriod(event) {
+  const switchIcon = event.target.querySelector("span");
+  const monthlyText = event.target.previousElementSibling;
+  const yearlyText = event.target.nextElementSibling;
+  if (selectState.period === "Monthly") {
+    switchTextState(switchIcon, monthlyText, yearlyText);
+    switchCostState("Yearly");
+    selectState.period = "Yearly";
+  } else if (selectState.period === "Yearly") {
+    switchTextState(switchIcon, yearlyText, monthlyText);
+    switchCostState("Monthly");
+    selectState.period = "Monthly";
+  }
+}
+
+function switchTextState(icon, nowPeriod, prevPeriod) {
+  icon.classList.add("animate-leftSlide");
+  icon.classList.remove("animate-rightSlide");
+  nowPeriod.classList.add("text-cool-gray");
+  nowPeriod.classList.remove("text-marine-blue", "font-bold");
+  prevPeriod.classList.add("text-marine-blue", "font-bold");
+}
+
+function switchCostState(nowCostState) {
+  const planGroup = document.getElementsByClassName("plan");
+  // Array.from 관련 내용 정리 ★
+  Array.from(planGroup).forEach((element) => {
+    const monthlyClass = element.querySelector(".monthly");
+    const yearlyClass = element.getElementsByClassName("yearly");
+    if (nowCostState === "Yearly") {
+      monthlyClass.classList.add("hidden");
+      Array.from(yearlyClass).forEach((childElem) => {
+        childElem.classList.remove("hidden");
+      });
+    } else if (nowCostState === "Monthly") {
+      Array.from(yearlyClass).forEach((childElem) => {
+        childElem.classList.add("hidden");
+      });
+      monthlyClass.classList.remove("hidden");
     }
   });
 }
@@ -246,6 +304,4 @@ function selectAddOnOption(event) {
 }
 
 //step4 - render event when user move to page step 4;
-function applyUserSelectData() {
-  console.log(selectState);
-}
+function applyUserSelectData() {}
