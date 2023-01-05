@@ -14,8 +14,8 @@ const selectState = {
   emailAddress: "",
   phoneNumber: "",
   period: "Monthly",
-  plan: "arcade",
-  addon: "",
+  plan: "Arcade",
+  addon: [],
 };
 
 // render event object when user move to step pages
@@ -86,13 +86,19 @@ const renderEvent = {
     });
   },
 
-  step4: () => console.log(selectState),
+  step4: () => {
+    setUserSelectData();
+  },
 };
 
 // place first page html element when the webpage is rendering first
 fetch("assets/pages/step1").then((response) => {
   response.text().then((text) => {
     context.innerHTML = text;
+    const stepMarkers = document.getElementsByClassName("step1");
+    Array.from(stepMarkers).forEach((element) => {
+      element.classList.add("bg-light-blue", "text-marine-blue");
+    });
   });
 });
 
@@ -118,6 +124,7 @@ function moveToNextStepPage() {
     .then((text) => {
       context.innerHTML = text;
       renderEvent[`step${selectState.nowStep}`]();
+      setActiveStepMarker("next");
     });
 }
 
@@ -129,7 +136,25 @@ function moveToPreviousStepPage() {
     .then((text) => {
       context.innerHTML = text;
       renderEvent[`step${selectState.nowStep}`]();
+      setActiveStepMarker("prev");
     });
+}
+
+function setActiveStepMarker(state) {
+  const prevSteps = document.getElementsByClassName(
+    `step${
+      state === "next" ? selectState.nowStep - 1 : selectState.nowStep + 1
+    }`
+  );
+  const nowSteps = document.getElementsByClassName(
+    `step${selectState.nowStep}`
+  );
+  Array.from(prevSteps).forEach((element) => {
+    element.classList.remove("bg-light-blue", "text-marine-blue");
+  });
+  Array.from(nowSteps).forEach((element) => {
+    element.classList.add("bg-light-blue", "text-marine-blue");
+  });
 }
 
 //step1 - input event when user inputed value in input element
@@ -213,19 +238,23 @@ function validationCheckToNextStep() {
 }
 
 function exposeErrorMsg(node, msg) {
-  const errorBox = node.previousElementSibling.querySelector("span");
-  errorBox.classList.remove("hidden");
-  errorBox.classList.add("block");
+  const mobileErrorBox = node.previousElementSibling.querySelector("span");
+  const desktopErrorBox = node.nextElementSibling;
+
+  mobileErrorBox.innerText = msg;
+  desktopErrorBox.innerText = msg;
+
   node.classList.add("border-strawberry-red");
-  errorBox.innerText = msg;
 }
 
 function disabledErrorMsg(node) {
-  const errorBox = node.previousElementSibling.querySelector("span");
-  errorBox.innerText = "";
+  const mobileErrorBox = node.previousElementSibling.querySelector("span");
+  const desktopErrorBox = node.nextElementSibling;
+
+  mobileErrorBox.innerText = "";
+  desktopErrorBox.innerText = "";
+
   node.classList.remove("border-strawberry-red");
-  errorBox.classList.remove("block");
-  errorBox.classList.add("hidden");
 }
 
 // step2 - click event when user clicked planning option
@@ -304,4 +333,69 @@ function selectAddOnOption(event) {
 }
 
 //step4 - render event when user move to page step 4;
-function applyUserSelectData() {}
+function changeSubscribePeriod() {
+  if (selectState.period === "Monthly") {
+    selectState.period = "Yearly";
+  } else if (selectState.period === "Yearly") {
+    selectState.period = "Monthly";
+  }
+  setUserSelectData();
+}
+
+function setUserSelectData() {
+  const planName = document.querySelector("#plan");
+  const periodName = document.querySelector("#period");
+  const subscribeCost = document.querySelector("#subscribeCost");
+  let totalCost = 0;
+
+  planName.innerText = selectState.plan;
+  periodName.innerText =
+    selectState.period === "Monthly" ? "(Monthly)" : "(Yearly)";
+
+  if (selectState.period === "Monthly") {
+    subscribeCost.innerText =
+      selectState.plan === "Arcade"
+        ? "$9/mo"
+        : "Advanced"
+        ? "$12/mo"
+        : "$15/mo";
+    totalCost =
+      totalCost + selectState.plan === "Arcade" ? 9 : "Advanced" ? 12 : 15;
+  } else if (selectState.period === "Yearly") {
+    subscribeCost.innerText =
+      selectState.plan === "Arcade"
+        ? "$90/yr"
+        : "Advanced"
+        ? "$120/yr"
+        : "$150/yr";
+    totalCost =
+      totalCost + selectState.plan === "Arcade" ? 90 : "Advanced" ? 120 : 150;
+  }
+
+  selectState.addon.forEach((element) => {
+    const addOnBlock = document.querySelector(`#${element}`);
+    const yearlyCost = addOnBlock.querySelector(".yearly");
+    const monthlyCost = addOnBlock.querySelector(".monthly");
+    if (addOnBlock !== null) {
+      addOnBlock.classList.remove("hidden");
+      addOnBlock.classList.add("flex");
+      if (selectState.period === "Monthly") {
+        yearlyCost.classList.add("hidden");
+        monthlyCost.classList.remove("hidden");
+        totalCost = totalCost + element === "onlineService" ? 1 : 2;
+      } else if (selectState.period === "Yearly") {
+        monthlyCost.classList.add("hidden");
+        yearlyCost.classList.remove("hidden");
+        totalCost = totalCost + element === "onlineService" ? 10 : 20;
+      }
+    }
+  });
+
+  const totalText = document.querySelector("#total");
+  totalText.querySelector("span").innerText =
+    selectState.period === "Monthly" ? "month" : "year";
+  totalText.nextElementSibling.innerText =
+    selectState.period === "Monthly"
+      ? `+$${totalCost}/mo`
+      : `+$${totalCost}/yr`;
+}

@@ -1,15 +1,48 @@
-<article class="flex flex-col justify-center h-full">
+<article class="flex flex-col h-full">
   <h1 class="font-bold text-3xl text-marine-blue">Finishing up</h1>
   <p class="text-cool-gray py-2 xsm:py-4">Double-check everything looks OK before confirming.</p>
   <!-- Dynamically add subscription and add-on selections here -->
 
-  <div>
+  <div class="flex flex-col h-full xsm:w-110 ">
+    <div>
+      <div class="flex flex-col bg-alabaster rounded-xl p-4">
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-col items-start">
+            <div class="flex flex-row gap-1">
+              <span id="plan" class="text-marine-blue font-bold">Arcade</span>
+              <span id="period" class="text-marine-blue font-bold">(Monthly)</span>
+            </div>
+            <button class="text-cool-gray underline" onclick="changeSubscribePeriod()">Change</button>
+          </div>
+          <span id="subscribeCost" class="text-marine-blue font-bold"></span>
+        </div>
 
-    <div class="xsm:w-110">
-      <div>
-        <span>Total (per month/year)</span>
+        <div class="border-b-2 border-cool-gray my-4">
+        </div>
+
+        <div id="onlineService" class="hidden flex-row justify-between my-2">
+          <span class="text-cool-gray text-sm font-medium">Online service</span>
+          <span class="monthly text-marine-blue text-sm font-medium">+$1/mo</span>
+          <span class="yearly text-marine-blue text-sm font-medium">+$10/yr</span>
+        </div>
+
+        <div id="largerStorage" class="hidden flex-row justify-between my-2">
+          <span class="text-cool-gray text-sm font-medium">Larger storage</span>
+          <span class="monthly text-marine-blue text-sm font-medium">+$2/mo</span>
+          <span class="yearly text-marine-blue text-sm font-medium">+$20/yr</span>
+        </div>
+
+        <div id="customizableProfile" class="hidden flex-row justify-between my-2">
+          <span class="text-cool-gray text-sm font-medium">Customizable Profile</span>
+          <span class="monthly text-marine-blue text-sm font-medium">+$2/mo</span>
+          <span class="yearly text-marine-blue text-sm font-medium">+$20/yr</span>
+        </div>
       </div>
 
+      <div class="flex flex-row justify-between items-center p-4">
+        <span id="total" class="text-cool-gray text-sm font-medium">Total (per <span class="lowercase"></span>)</span>
+        <span class="text-purplish-blue font-bold text-xl"></span>
+      </div>
     </div>
 
     <div class="xsm:flex flex-row hidden mb-0 mt-auto">
@@ -19,6 +52,7 @@
         Confirm
       </button>
     </div>
+  </div>
 </article>
 
 <div class="fixed flex justify-center left-0 bottom-0 bg-white w-full h-16 xsm:hidden">

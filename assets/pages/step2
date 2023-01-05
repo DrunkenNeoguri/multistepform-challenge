@@ -1,46 +1,49 @@
-<article class="flex flex-col justify-center h-full w-full">
+<article class="flex flex-col justify-center h-full w-full pb-16 xsm:pb-0">
   <h1 class="font-bold text-3xl text-marine-blue">Select your plan</h1>
   <p class="text-cool-gray py-2 xsm:py-4">You have the option of monthly or yearly billing.</p>
 
   <div class="flex flex-col xsm:flex-row xsm:justify-between xsm:gap-4">
-    <button id="arcade"
-      class="plan flex flex-row items-center border-light-gray border-2 rounded-md my-2 border-purplish-blue bg-magnolia xsm:flex-col xsm:items-start xsm:w-34"
+    <button id="Arcade"
+      class="plan flex flex-row justify-start items-start border-light-gray border-2 rounded-md py-2 my-2 border-purplish-blue bg-magnolia xsm:flex-col xsm:w-34"
       onclick="selectPlanningOption(event)">
-      <img src="assets/images/icon-arcade.svg" alt="Arcade Plan, $9 per month" class="p-4 pointer-events-none">
-      <div class="flex flex-col items-start xsm:p-4 pointer-events-none">
+      <img src="assets/images/icon-arcade.svg" alt="Arcade Plan, $9 per month" class="px-4 py-2 pointer-events-none">
+      <div class="flex flex-col items-start pointer-events-none my-auto gap-1 xsm:p-4">
         <label class="text-marine-blue font-medium pointer-events-none">Arcade</label>
-        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none">$9/mo</span>
+        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none xsm:font-medium">$9/mo</span>
         <span class="yearly hidden text-cool-gray text-sm font-medium pointer-events-none">$90/yr</span>
-        <span class="yearly hidden text-marine-blue text-sm font-normal pointer-events-none">2 months free</span>
+        <span class="yearly hidden text-marine-blue text-sm font-medium pointer-events-none">2 months
+          free</span>
       </div>
     </button>
 
-    <button id="advanced"
-      class="plan flex flex-row items-center border-light-gray border-2 rounded-md my-2 xsm:flex-col xsm:items-start xsm:w-34"
+    <button id="Advanced"
+      class="plan flex flex-row justify-start items-start border-light-gray border-2 rounded-md py-2 my-2 xsm:flex-col xsm:w-34"
       onclick="selectPlanningOption(event)">
-      <img src="assets/images/icon-advanced.svg" alt="Arcade Plan, $9 per month" class="p-4 pointer-events-none">
-      <div class="flex flex-col items-start xsm:p-4 pointer-events-none">
-        <label class="text-marine-blue font-medium pointer-events-none">Advanced</label>
-        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none">$12/mo</span>
+      <img src="assets/images/icon-advanced.svg" alt="Arcade Plan, $9 per month" class="px-4 py-2 pointer-events-none">
+      <div class="flex flex-col items-start pointer-events-none my-auto gap-1 xsm:p-4">
+        <label class="text-marine-blue font-medium pointer-events-none xsm:font-base">Advanced</label>
+        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none xsm:font-medium">$12/mo</span>
         <span class="yearly hidden text-cool-gray text-sm font-medium pointer-events-none">$120/yr</span>
-        <span class="yearly hidden text-marine-blue text-sm font-normal pointer-events-none">2 months free</span>
+        <span class="yearly hidden text-marine-blue text-sm font-medium pointer-events-none">2 months
+          free</span>
       </div>
     </button>
 
-    <button id="pro"
-      class="plan flex flex-row items-center border-light-gray border-2 rounded-md my-2 xsm:flex-col xsm:items-start xsm:w-34"
+    <button id="Pro"
+      class="plan flex flex-row justify-start items-start border-light-gray border-2 rounded-md py-2 my-2 xsm:flex-col xsm:w-34"
       onclick="selectPlanningOption(event)">
-      <img src="assets/images/icon-pro.svg" alt="Arcade Plan, $9 per month" class="p-4 pointer-events-none">
-      <div class="flex flex-col items-start xsm:p-4 pointer-events-none">
+      <img src="assets/images/icon-pro.svg" alt="Arcade Plan, $9 per month" class="px-4 py-2 pointer-events-none">
+      <div class="flex flex-col items-start pointer-events-none my-auto gap-1 xsm:p-4">
         <label class="text-marine-blue font-medium pointer-events-none">Pro</label>
-        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none">$15/mo</span>
+        <span class="monthly text-cool-gray text-sm font-medium pointer-events-none xsm:font-medium">$15/mo</span>
         <span class="yearly hidden text-cool-gray text-sm font-medium pointer-events-none">$150/yr</span>
-        <span class="yearly hidden text-marine-blue text-sm font-normal pointer-events-none">2 months free</span>
+        <span class="yearly hidden text-marine-blue text-sm font-medium pointer-events-none">2 months
+          free</span>
       </div>
     </button>
   </div>
 
-  <div class="flex flex-row justify-center bg-magnolia gap-6 rounded-md py-4">
+  <div class="flex flex-row justify-center bg-magnolia gap-6 rounded-md py-4 my-2">
     <span class="flex justify-end font-bold text-marine-blue w-16">
       Monthly
     </span>

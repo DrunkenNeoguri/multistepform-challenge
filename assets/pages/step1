@@ -7,31 +7,34 @@
     <div class="flex flex-col py-2 xsm:py-4">
       <div class="flex justify-between">
         <label for="name" class="block text-marine-blue text-sm xsm:text-base xsm:font-medium">Name</label>
-        <span class="hidden text-sm text-strawberry-red font-bold xsm:text-base xsm:font-medium"></span>
+        <span class="hidden text-base text-strawberry-red font-medium xsm:block"></span>
       </div>
       <input id="name" type="text"
         class="border-light-gray border-2 rounded w-full px-4 py-2 outline-0 focus:border-purplish-blue placeholder:text-sm placeholder:font-medium"
         placeholder="e.g. Stephen King" onchange="inputValidationCheck(event)">
+      <span class="block text-sm text-strawberry-red font-bold xsm:hidden"></span>
     </div>
 
     <div class="flex flex-col py-2 xsm:py-4">
       <div class="flex justify-between">
         <label for="email" class="block text-marine-blue text-sm xsm:text-base xsm:font-medium">Email Address</label>
-        <span class="hidden text-sm text-strawberry-red font-bold xsm:text-base xsm:font-medium"></span>
+        <span class="hidden text-base text-strawberry-red font-medium xsm:block"></span>
       </div>
       <input id="email" type="email"
         class="border-light-gray border-2 rounded w-full px-4 py-2 outline-0 focus:border-purplish-blue placeholder:text-sm placeholder:font-medium"
         placeholder="e.g. stephenking@lorem.com" onchange="inputValidationCheck(event)">
+      <span class="block text-sm text-strawberry-red font-bold xsm:hidden"></span>
     </div>
 
     <div class="flex flex-col py-2 xsm:py-4">
       <div class="flex justify-between">
         <label for="phone" class="block text-marine-blue text-sm xsm:text-base xsm:font-medium ">Phone Number</label>
-        <span class="hidden text-sm text-strawberry-red font-bold xsm:text-base xsm:font-medium"></span>
+        <span class="hidden text-base text-strawberry-red font-medium xsm:block"></span>
       </div>
       <input id="phone" type="text"
         class="border-light-gray border-2 rounded w-full px-4 py-2 outline-0 focus:border-purplish-blue placeholder:text-sm placeholder:font-medium"
         placeholder="e.g. +1 234 567 890" onchange="inputValidationCheck(event)">
+      <span class="block text-sm text-strawberry-red font-bold xsm:hidden"></span>
     </div>
   </form>
 

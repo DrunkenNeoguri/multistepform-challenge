@@ -66,13 +66,13 @@
 </head>
 
 <body>
-  <main id="root" class="flex flex-col xsm:flex-row  items-center xsm:bg-white m-auto max-w-4xl rounded-lg">
+  <main id="root" class="flex flex-col xsm:flex-row  items-center xsm:bg-white m-auto max-w-4xl rounded-lg xsm:my-20">
     <nav
       class="bg-[url('/assets/images/bg-sidebar-desktop.svg')] bg-no-repeat bg-cover rounded-lg hidden xsm:flex xsm:flex-col h-144 w-68 m-4 p-4">
 
       <div class="flex flex-row gap-4 items-center m-2">
         <div
-          class="flex justify-center align-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">
+          class="step1 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
           1
         </div>
         <div class="flex flex-col">
@@ -82,7 +82,9 @@
       </div>
 
       <div class="flex flex-row gap-4 items-center m-2">
-        <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8"> 2
+        <div
+          class="step2 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          2
         </div>
         <div class="flex flex-col">
           <span class="uppercase text-cool-gray">STEP 2</span>
@@ -91,7 +93,9 @@
       </div>
 
       <div class="flex flex-row gap-4 items-center m-2">
-        <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8"> 3
+        <div
+          class="step3 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          3
         </div>
         <div class="flex flex-col">
           <span class="uppercase text-cool-gray">STEP 3</span>
@@ -100,7 +104,9 @@
       </div>
 
       <div class="flex flex-row gap-4 items-center m-2">
-        <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8"> 4
+        <div
+          class="step4 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          4
         </div>
         <div class="flex flex-col">
           <span class="uppercase text-cool-gray">STEP 4</span>
@@ -111,13 +117,21 @@
 
     <nav
       class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-cover flex flex-row justify-center gap-4 xsm:hidden w-full h-44 py-8 relative">
-      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">1
+      <div
+        class="step1 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        1
       </div>
-      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">2
+      <div
+        class="step2 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        2
       </div>
-      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">3
+      <div
+        class="step3 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        3
       </div>
-      <div class="flex justify-center items-center border border-light-blue rounded-full text-light-blue w-8 h-8">4
+      <div
+        class="step4 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        4
       </div>
     </nav>
     <section id="context"

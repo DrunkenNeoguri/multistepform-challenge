@@ -3,10 +3,11 @@
   <p class="text-cool-gray py-2 xsm:py-4">Add-ons help enhance your gaming experience.</p>
 
   <div>
-    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4"
+    <button
+      class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-3 w-full xsm:w-110 xsm:my-4 xsm:p-4"
       onclick="selectAddOnOption(event)">
       <div id="onlineService"
-        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-4 rounded pointer-events-none">
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-3 rounded pointer-events-none xsm:mr-4">
         <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
       </div>
       <div class="flex flex-col items-start pointer-events-none">
@@ -17,10 +18,11 @@
       <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$1/mo</span>
     </button>
 
-    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4"
+    <button
+      class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-3 w-full xsm:w-110 xsm:my-4 xsm:p-4"
       onclick="selectAddOnOption(event)">
       <div id="largerStorage"
-        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-4 rounded pointer-events-none">
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-3 rounded pointer-events-none xsm:mr-4">
         <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
       </div>
       <div class="flex flex-col items-start pointer-events-none">
@@ -31,10 +33,11 @@
       <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$2/mo</span>
     </button>
 
-    <button class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-4 w-full xsm:w-110 xsm:my-4"
+    <button
+      class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-3 w-full xsm:w-110 xsm:my-4 xsm:p-4"
       onclick="selectAddOnOption(event)">
       <div id="customizableProfile"
-        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-4 rounded pointer-events-none">
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-3 rounded pointer-events-none xsm:mr-4">
         <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
       </div>
       <div class="flex flex-col items-start pointer-events-none">
