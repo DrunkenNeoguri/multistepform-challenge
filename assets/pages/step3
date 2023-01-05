@@ -1,0 +1,68 @@
+<article class="flex flex-col justify-center h-full w-full">
+  <h1 class="font-bold text-3xl text-marine-blue">Pick add-ons</h1>
+  <p class="text-cool-gray py-2 xsm:py-4">Add-ons help enhance your gaming experience.</p>
+
+  <div>
+    <button
+      class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-3 w-full xsm:w-110 xsm:my-4 xsm:p-4"
+      onclick="selectAddOnOption(event)">
+      <div id="onlineService"
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-3 rounded pointer-events-none xsm:mr-4">
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
+      </div>
+      <div class="flex flex-col items-start pointer-events-none">
+        <label class="block text-marine-blue text-sm font-medium pointer-events-none xsm:text-base ">Online
+          service</label>
+        <span class="block text-cool-gray text-xs pointer-events-none xsm:text-sm">Access to multiplayer games</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$1/mo</span>
+    </button>
+
+    <button
+      class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-3 w-full xsm:w-110 xsm:my-4 xsm:p-4"
+      onclick="selectAddOnOption(event)">
+      <div id="largerStorage"
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-3 rounded pointer-events-none xsm:mr-4">
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
+      </div>
+      <div class="flex flex-col items-start pointer-events-none">
+        <label class="block text-marine-blue text-sm font-medium pointer-events-none xsm:text-base ">Larger
+          storage</label>
+        <span class="block text-cool-gray text-xs pointer-events-none xsm:text-sm">Extra 1TB of cloud save</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$2/mo</span>
+    </button>
+
+    <button
+      class="flex flex-row items-center border-light-gray border-2 rounded-md my-2 p-3 w-full xsm:w-110 xsm:my-4 xsm:p-4"
+      onclick="selectAddOnOption(event)">
+      <div id="customizableProfile"
+        class="checkbox flex justify-center items-center w-6 h-6 border-light-gray border-2 mr-3 rounded pointer-events-none xsm:mr-4">
+        <img src="assets/images/icon-checkmark.svg" alt="" class="w-4 h-4">
+      </div>
+      <div class="flex flex-col items-start pointer-events-none">
+        <label class="block text-marine-blue text-sm font-medium pointer-events-none xsm:text-base ">Customizable
+          Profile</label>
+        <span class="block text-cool-gray text-xs pointer-events-none xsm:text-sm">Custom theme on your profile</span>
+      </div>
+      <span class="ml-auto text-sm text-purplish-blue font-medium pointer-events-none">+$2/mo</span>
+    </button>
+
+  </div>
+
+  <div class="xsm:flex flex-row hidden mb-0 mt-auto">
+    <button class="block text-cool-gray" onclick="moveToPreviousStepPage()">Go Back</button>
+    <button class="hidden xsm:block bg-marine-blue text-white px-4 py-2 m-auto mr-0 rounded mb-0"
+      onclick="moveToNextStepPage()">
+      Next Step
+    </button>
+  </div>
+
+</article>
+
+<div class="fixed flex justify-center left-0 bottom-0 bg-white w-full h-16 xsm:hidden">
+  <button class="block text-cool-gray px-4 py-2 m-auto ml-0 rounded" onclick="moveToPreviousStepPage()">Go Back</button>
+  <button class="block bg-marine-blue text-white px-4 py-2 m-auto mr-4 rounded" onclick="moveToNextStepPage()">
+    Next Step
+  </button>
+</div>

@@ -2,139 +2,152 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
   <title>Frontend Mentor | Multi-step form</title>
-
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
+  <script>
+    tailwind.config = {
+      important: "body",
+      theme: {
+        screens: {
+          'xsm': '480px',
+          'zero': '0px'
+        },
+        extend: {
+          spacing: {
+            '34': '8.5rem',
+            '88': '22rem',
+            '110': '27.5rem',
+            '120': '30rem',
+            '144': '36rem',
+            '168': '42rem',
+            '192': '48rem',
+            '216': '54rem',
+            '240': '60rem',
+            '6/4': '150%',
+          },
+          colors: {
+            "marine-blue": "hsl(213, 96%, 18%)",
+            "purplish-blue": "hsl(243, 100%, 62%)",
+            "pastel-blue": "hsl(228, 100%, 84%)",
+            "light-blue": "hsl(206, 94%, 87%)",
+            "strawberry-red": "hsl(354, 84%, 57%)",
+            "cool-gray": "hsl(231, 11%, 63%)",
+            "light-gray": "hsl(229, 24%, 87%)",
+            "magnolia": "hsl(217, 100%, 97%)",
+            "alabaster": "hsl(231, 100%, 99%)",
+            "white": "hsl(0, 0%, 100%)",
+            "attribution": "hsl(228, 45%, 44%)",
+          },
+          keyframes: {
+            rightSlide: {
+              '0%': { transform: "translateY(25%)" },
+              '100%': { transform: "translateX(150%) translateY(25%)" }
+            },
+            leftSlide: {
+              '0%': { transform: "translateX(150%) translateY(25%)" },
+              '100%': { transform: "translateY(25%)" }
+            }
+          },
+          animation: {
+            rightSlide: 'rightSlide 1s 1 forwards',
+            leftSlide: 'leftSlide 1s 1 forwards'
+          }
+        },
+      }
     }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
-
+  </script>
 </head>
 
 <body>
+  <main id="root" class="flex flex-col xsm:flex-row  items-center xsm:bg-white m-auto max-w-4xl rounded-lg xsm:my-20">
+    <nav
+      class="bg-[url('/assets/images/bg-sidebar-desktop.svg')] bg-no-repeat bg-cover rounded-lg hidden xsm:flex xsm:flex-col h-144 w-68 m-4 p-4">
 
-  <!-- Sidebar start -->
-  Step 1
-  Your info
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div
+          class="step1 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          1
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">Step 1</span>
+          <span class="uppercase text-magnolia font-bold">Your info</span>
+        </div>
+      </div>
 
-  Step 2
-  Select plan
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div
+          class="step2 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          2
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">STEP 2</span>
+          <span class="uppercase text-magnolia font-bold">Select plan</span>
+        </div>
+      </div>
 
-  Step 3
-  Add-ons
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div
+          class="step3 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          3
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">STEP 3</span>
+          <span class="uppercase text-magnolia font-bold">Add-ons</span>
+        </div>
+      </div>
 
-  Step 4
-  Summary
+      <div class="flex flex-row gap-4 items-center m-2">
+        <div
+          class="step4 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium w-8 h-8">
+          4
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase text-cool-gray">STEP 4</span>
+          <span class="uppercase text-magnolia font-bold">Summary</span>
+        </div>
+      </div>
+    </nav>
 
-  <!-- Sidebar end -->
+    <nav
+      class="bg-[url('/assets/images/bg-sidebar-mobile.svg')] bg-no-repeat bg-cover flex flex-row justify-center gap-4 xsm:hidden w-full h-44 py-8 relative">
+      <div
+        class="step1 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        1
+      </div>
+      <div
+        class="step2 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        2
+      </div>
+      <div
+        class="step3 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        3
+      </div>
+      <div
+        class="step4 flex justify-center items-center border border-light-blue rounded-full text-light-blue font-medium  w-8 h-8">
+        4
+      </div>
+    </nav>
+    <section id="context"
+      class="bg-white rounded-lg m-4 py-8 px-6 absolute z-10 top-20 xsm:rounded-l-none xsm:rounded-r-xl xsm:static xsm:h-144 xsm:m-auto xsm:pb-0">
+    </section>
+  </main>
 
-  <!-- Step 1 start -->
+  <footer class="text-xs text-center">
+    Challenge by
+    <a class="text-attribution" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+      Mentor</a>.
+    Coded by
+    <a class="text-attribution" href="https://www.frontendmentor.io/profile/DrunkenNeoguri">develop_neoguri</a>.
+  </footer>
 
-  Personal info
-  Please provide your name, email address, and phone number.
-
-  Name
-  e.g. Stephen King
-
-  Email Address
-  e.g. stephenking@lorem.com
-
-  Phone Number
-  e.g. +1 234 567 890
-
-  Next Step
-
-  <!-- Step 1 end -->
-
-  <!-- Step 2 start -->
-
-  Select your plan
-  You have the option of monthly or yearly billing.
-
-  Arcade
-  $9/mo
-
-  Advanced
-  $12/mo
-
-  Pro
-  $15/mo
-
-  Monthly
-  Yearly
-
-  Go Back
-  Next Step
-
-  <!-- Step 2 end -->
-
-  <!-- Step 3 start -->
-
-  Pick add-ons
-  Add-ons help enhance your gaming experience.
-
-  Online service
-  Access to multiplayer games
-  +$1/mo
-
-  Larger storage
-  Extra 1TB of cloud save
-  +$2/mo
-
-  Customizable Profile
-  Custom theme on your profile
-  +$2/mo
-
-  Go Back
-  Next Step
-
-  <!-- Step 3 end -->
-
-  <!-- Step 4 start -->
-
-  Finishing up
-  Double-check everything looks OK before confirming.
-
-  <!-- Dynamically add subscription and add-on selections here -->
-
-  Total (per month/year)
-
-  Go Back
-  Confirm
-
-  <!-- Step 4 end -->
-
-  <!-- Step 5 start -->
-
-  Thank you!
-
-  Thanks for confirming your subscription! We hope you have fun
-  using our platform. If you ever need support, please feel free
-  to email us at support@loremgaming.com.
-
-  <!-- Step 5 end -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://www.frontendmentor.io/profile/DrunkenNeoguri">develop_neoguri</a>.
-  </div>
-
-  <script src="/main.js"></script>
-
+  <script src="./assets/modules/main.js"></script>
 </body>
 
 </html>
