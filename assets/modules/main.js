@@ -212,13 +212,13 @@ function validationCheckToNextStep() {
   const phoneNode = document.querySelector("#phone");
 
   if (nameNode.value === "") {
-    exposeErrorMsg(phoneNode, errormsg1);
+    exposeErrorMsg(nameNode, errormsg1);
   }
 
   if (emailNode.value === "") {
-    exposeBlankValueErrorMsg(emailNode);
+    exposeErrorMsg(emailNode, errormsg1);
   } else if (emailFormat.test(emailNode.value) === false) {
-    exposeErrorMsg(phoneNode, errormsg2);
+    exposeErrorMsg(emailNode, errormsg2);
   }
 
   if (phoneNode.value === "") {
@@ -288,8 +288,14 @@ function changePlanPeriod(event) {
 }
 
 function switchTextState(icon, nowPeriod, prevPeriod) {
-  icon.classList.add("animate-leftSlide");
-  icon.classList.remove("animate-rightSlide");
+  if (selectState.period === "Monthly") {
+    icon.classList.remove("animate-leftSlide");
+    icon.classList.add("animate-rightSlide");
+  } else if (selectState.period === "Yearly") {
+    icon.classList.add("animate-leftSlide");
+    icon.classList.remove("animate-rightSlide");
+  }
+
   nowPeriod.classList.add("text-cool-gray");
   nowPeriod.classList.remove("text-marine-blue", "font-bold");
   prevPeriod.classList.add("text-marine-blue", "font-bold");
