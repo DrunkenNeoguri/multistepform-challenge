@@ -30,11 +30,11 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 ### 구현 예시 (스크린샷 또는 영상)
 
 **데스크탑 버전**
-![Desktop Version](./demo/desktop-screen.jpg)
+![Desktop Version](./demo/desktop-screen.gif)
 
 **모바일 버전**
 
-![Mobile Version](./demo/mobile-screen.jpg)
+![Mobile Version](./demo/mobile-screen.gif)
 
 ### 링크
 
